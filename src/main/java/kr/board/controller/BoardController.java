@@ -34,15 +34,36 @@ public class BoardController {
 		return list;  // 스프링은 객체를 JSON 데이터 형식으로 변환(API)해서 리턴(응답)하겠다.
 	}
 	
+	// @ResponseBody -> jackson-databind API를 추가해주면 (객체를 -> JSON 데이터포멧으로 변환해준다.)	
+	@RequestMapping("/boardContent.do")
+	public @ResponseBody Board boardContent(int idx){	//AJAX에서 보내주는 data key값과 일치해야 한다.
+		Board vo = boardMapper.boardContent(idx);
+		return vo;  // vo -> JSON타입으로 바뀌어서 AJAX쪽으로 반환된다.
+	}
+	
 	// return타입이 void라고 할지라도 @ResponseBody가 있으면 ajax를 호출한(success)부분으로 넘어간다. 	
 	@RequestMapping("/boardInsert.do")
 	public @ResponseBody void boardInsert(Board vo){
 		boardMapper.boardInsert(vo);	// 등록성공
 	}
 	
+	// @ResponseBody -> jackson-databind API를 추가해주면 (객체를 -> JSON 데이터포멧으로 변환해준다.)	
+	@RequestMapping("/boardUpdate.do")
+	public @ResponseBody void boardUpdate(Board vo){
+		boardMapper.boardUpdate(vo);
+	}
+		
 	// return타입이 void라고 할지라도 @ResponseBody가 있으면 ajax를 호출한(success)부분으로 넘어간다. 	
 	@RequestMapping("/boardDelete.do")
 	public @ResponseBody void boardDelete(int idx){
 		boardMapper.boardDelete(idx);	// 삭제성공
+	}
+	
+	// return타입이 void라고 할지라도 @ResponseBody가 있으면 ajax를 호출한(success)부분으로 넘어간다. 	
+	@RequestMapping("/boardCount.do")
+	public @ResponseBody Board boardCount(int idx){
+		boardMapper.boardCount(idx);	
+		Board vo = boardMapper.boardContent(idx);
+		return vo;
 	}
 }
