@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <title>Spring MVC02</title>
   <meta charset="utf-8">

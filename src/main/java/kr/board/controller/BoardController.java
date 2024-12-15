@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import kr.board.entity.Board;
 import kr.board.mapper.BoardMapper;
-
+ 
 @Controller
 public class BoardController {
 	

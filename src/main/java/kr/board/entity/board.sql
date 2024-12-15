@@ -1,4 +1,4 @@
-create table myboard(
+create table myboard( 
 	idx int not null auto_increment,
 	title varchar(100) not null,
 	content varchar(2000) not null,

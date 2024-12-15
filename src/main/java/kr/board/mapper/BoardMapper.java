@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Update;
 
 import kr.board.entity.Board;
-
+ 
 @Mapper //- mybatis API
 public interface BoardMapper {
 	public List<Board> getLists();	// 전체리스트
